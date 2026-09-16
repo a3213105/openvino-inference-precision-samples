@@ -64,7 +64,7 @@ Common inputs for this project:
 1. Set inference precision hint (before compilation):
 
 ```cpp
-core.set_property("CPU", ov::hint::inference_precision(parse_precision(hint)));
+core.set_property("CPU", ov::AnyMap{{ov::hint::inference_precision.name(), hint}});
 ```
 
 2. Query and print:
